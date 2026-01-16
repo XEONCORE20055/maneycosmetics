@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maney Cosmetics - Natural Brightening & Skincare Solutions</title>
+    <meta name="description" content="Maney Cosmetics offers premium natural skincare and cosmetic products for a radiant, glowing complexion. Discover our brightening solutions and skincare routines.">
+    <meta name="keywords" content="cosmetics, skincare, natural beauty, brightening, makeup, beauty products">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="#">
+    
+    <style>
+        /* CSS Variables for consistent styling */
+        :root {
+            --primary-orchid: #ff00f7;
+            --secondary-cream: #FFFDD0;
+            --background-white: #FFFFFF;
+            --accent-gold: #D4AF37;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --shadow-light: rgba(0, 0, 0, 0.1);
+            --shadow-medium: rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s ease;
+            --border-radius: 8px;
+        }
+        
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--background-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-gold);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+            color: var(--text-light);
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        section {
+            padding: 5rem 1.5rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .section-title {
+            margin-bottom: 3rem;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-orchid);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #c55bc0;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px var(--shadow-light);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary-orchid);
+            border: 2px solid var(--primary-orchid);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--primary-orchid);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .btn-accent {
+            background-color: var(--accent-gold);
+            color: white;
+        }
+        
+        .btn-accent:hover {
+            background-color: #c19b2e;
+            transform: translateY(-3px);
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: var(--background-white);
+            box-shadow: 0 2px 10px var(--shadow-light);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-orchid);
+        }
+        
+        .logo span {
+            color: var(--accent-gold);
+        }
+        
+        .nav-menu {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-list {
+            display: flex;
+        }
+        
+        .nav-item {
+            margin-left: 2rem;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-orchid);
+            bottom: 0;
+            left: 0;
+            transition: var(--transition);
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-orchid);
+        }
+        
+        .cart-icon {
+            position: relative;
+            margin-left: 2rem;
+            font-size: 1.3rem;
+            cursor: pointer;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--primary-orchid);
+            color: white;
+            font-size: 0.7rem;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(255, 253, 208, 0.8), rgba(255, 253, 208, 0.9)), url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 600px;
+        }
+        
+        .hero h1 {
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            color: var(--text-light);
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        /* Featured Products */
+        .featured-products {
+            background-color: var(--background-white);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 5px 15px var(--shadow-light);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .product-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px var(--shadow-medium);
+        }
+        
+        .product-img {
+            height: 250px;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+        }
+        
+        .product-name {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-price {
+            color: var(--accent-gold);
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* About Section */
+        .about {
+            background-color: var(--secondary-cream);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-img {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 10px 30px var(--shadow-medium);
+        }
+        
+        /* Tips Section */
+        .tips {
+            background-color: var(--background-white);
+        }
+        
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .tip-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 15px var(--shadow-light);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .tip-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .tip-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .tip-icon {
+            font-size: 2.5rem;
+            color: var(--primary-orchid);
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Promotions Section */
+        .promotions {
+            background-color: var(--secondary-cream);
+        }
+        
+        .promo-carousel {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 30px var(--shadow-medium);
+        }
+        
+        .carousel-slide {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .promo-slide {
+            min-width: 100%;
+            padding: 3rem;
+            text-align: center;
+            background-color: white;
+        }
+        
+        .promo-slide h3 {
+            color: var(--primary-orchid);
+            margin-bottom: 1rem;
+        }
+        
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.7);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .carousel-btn:hover {
+            background-color: white;
+        }
+        
+        .prev-btn {
+            left: 20px;
+        }
+        
+        .next-btn {
+            right: 20px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: var(--background-white);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .contact-form {
+            background-color: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 15px var(--shadow-light);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.9rem;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-orchid);
+            box-shadow: 0 0 0 3px rgba(218, 112, 214, 0.2);
+        }
+        
+        .contact-info {
+            padding: 2rem;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-icon {
+            background-color: var(--secondary-cream);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            color: var(--primary-orchid);
+            font-size: 1.2rem;
+        }
+        
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            background-color: #25D366;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: var(--border-radius);
+            margin-top: 1rem;
+            font-weight: 600;
+        }
+        
+        .whatsapp-btn i {
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+            transform: translateY(-3px);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #210947;
+            color: white;
+            padding: 4rem 1.5rem 2rem;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-cream);
+        }
+        
+        .footer-logo span {
+            color: var(--accent-gold);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        
+        .social-icon:hover {
+            background-color: var(--primary-orchid);
+            transform: translateY(-5px);
+        }
+        
+        .footer-heading {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary-cream);
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-orchid);
+        }
+        
+        .newsletter-form {
+            display: flex;
+            margin-top: 1rem;
+        }
+        
+        .newsletter-input {
+            flex: 1;
+            padding: 0.8rem;
+            border: none;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .newsletter-btn {
+            background-color: var(--primary-orchid);
+            color: white;
+            border: none;
+            padding: 0 1.2rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            cursor: pointer;
+        }
+        
+        .newsletter-btn:hover {
+            background-color: #c55bc0;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Product Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+        
+        .modal-content {
+            background-color: white;
+            border-radius: var(--border-radius);
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalFade 0.3s;
+        }
+        
+        @keyframes modalFade {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-light);
+            z-index: 10;
+        }
+        
+        .close-modal:hover {
+            color: var(--primary-orchid);
+        }
+        
+        .modal-body {
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        
+        .modal-product-image {
+            width: 100%;
+            border-radius: var(--border-radius);
+        }
+        
+        .modal-product-details h2 {
+            text-align: left;
+        }
+        
+        .modal-product-details h2::after {
+            left: 0;
+            transform: none;
+        }
+        
+        .product-highlight {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .highlight-icon {
+            color: var(--accent-gold);
+            margin-right: 0.5rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal-body {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                width: 80%;
+                height: calc(100vh - 70px);
+                background-color: white;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 2rem;
+                box-shadow: -5px 0 15px var(--shadow-light);
+                transition: var(--transition);
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .nav-list {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .nav-item {
+                margin: 0 0 1.5rem 0;
+                width: 100%;
+            }
+            
+            .nav-link {
+                display: block;
+                padding: 0.5rem 0;
+                width: 100%;
+            }
+            
+            .cart-icon {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .hero-buttons .btn {
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+            
+            .promo-slide {
+                padding: 2rem 1.5rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            section {
+                padding: 3rem 1rem;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">Maney<span>Cosmetics</span></a>
+            
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#products" class="nav-link">Products</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#tips" class="nav-link">Tips</a></li>
+                    <li class="nav-item"><a href="#promotions" class="nav-link">Promotions</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                
+                <div class="cart-icon" id="cart-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Glow with Maney Cosmetics</h1>
+                <p>Natural Brightening & Skincare Solutions for radiant, healthy-looking skin. Our products are crafted with premium ingredients to enhance your natural beauty.</p>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn btn-primary">Shop Now</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="featured-products" id="products">
+        <div class="container">
+            <h2 class="section-title">Our Best Sellers</h2>
+            <div class="products-grid" id="products-grid">
+                <!-- Products will be added dynamically with JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">Our Story</h2>
+            <div class="about-content">
+                <div class="about-img">
+                    <!-- Placeholder for about image -->
+                    <div style="height: 400px; background-color: #f0f0f0; display: flex; align-items: center; justify-content: center; color: #999;">
+                        <i class="fas fa-spa" style="font-size: 4rem;"></i>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h3>Natural Beauty, Elevated</h3>
+                    <p>Founded in 2018, Maney Cosmetics began with a simple mission: to create clean, effective skincare and cosmetic products that celebrate natural beauty. Our founder, Maya Ney, was frustrated with products that promised results but contained harsh chemicals.</p>
+                    <p>We believe that beauty starts with healthy skin. That's why every product is formulated with natural ingredients, rigorously tested for safety and efficacy, and designed to enhance your unique features.</p>
+                    <p>Our commitment to sustainability means we use eco-friendly packaging and ethically sourced ingredients whenever possible.</p>
+                    <a href="#contact" class="btn btn-accent">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tips Section -->
+    <section class="tips" id="tips">
+        <div class="container">
+            <h2 class="section-title">Skincare Tips</h2>
+            <div class="tips-grid" id="tips-grid">
+                <!-- Tips will be added dynamically with JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Promotions Section -->
+    <section class="promotions" id="promotions">
+        <div class="container">
+            <h2 class="section-title">Special Offers</h2>
+            <div class="promo-carousel">
+                <div class="carousel-slide" id="carousel-slide">
+                    <div class="promo-slide">
+                        <h3>Summer Glow Bundle</h3>
+                        <p>Get our complete brightening skincare routine at 20% off. Includes cleanser, toner, serum, and moisturizer.</p>
+                        <p class="product-price">$89.99 <span style="text-decoration: line-through; color: #999; font-size: 1rem;">$112.99</span></p>
+                        <a href="#products" class="btn btn-primary">Shop Now</a>
+                    </div>
+                    <div class="promo-slide">
+                        <h3>Free Shipping</h3>
+                        <p>Free shipping on all orders over $50. Use code: FREESHIP at checkout.</p>
+                        <p>Valid until August 31, 2026</p>
+                        <a href="#products" class="btn btn-accent">Shop Now</a>
+                    </div>
+                    <div class="promo-slide">
+                        <h3>New Customer Discount</h3>
+                        <p>First-time buyers get 15% off their entire order. Use code: WELCOME15 at checkout.</p>
+                        <p>One time use per customer</p>
+                        <a href="#products" class="btn btn-primary">Shop Now</a>
+                    </div>
+                </div>
+                <button class="carousel-btn prev-btn" id="prev-btn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-btn next-btn" id="next-btn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-form">
+                    <h3>Send us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" id="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+                
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Our Store</h4>
+                            <p>123 Beauty Street, Cosmetic City, CC 10001</p>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>Phone Number</h4>
+                            <p>(123) 456-7890</p>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email Address</h4>
+                            <p>info@maneycosmetics.com</p>
+                        </div>
+                    </div>
+                    
+                    <h4 style="margin-top: 2rem;">Instant Messaging</h4>
+                    <p>Have a question about our products? Chat with us on WhatsApp for quick assistance.</p>
+                    <a href="https://wa.me/1234567890" class="whatsapp-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="footer-logo">Maney<span>Cosmetics</span></div>
+                <p>Natural beauty products crafted with care. Our mission is to provide clean, effective skincare and cosmetics that enhance your natural glow.</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#tips">Skincare Tips</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-newsletter">
+                <h4 class="footer-heading">Newsletter</h4>
+                <p>Subscribe to get updates on new products and exclusive offers.</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" class="newsletter-input" placeholder="Your Email" required>
+                    <button type="submit" class="newsletter-btn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2026 Maney Cosmetics. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Product Modal -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeModal">&times;</button>
+            <div class="modal-body" id="modalBody">
+                <!-- Product details will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Website data
+        const products = [
+            {
+                id: 1,
+                name: "Brightening Serum",
+                description: "Vitamin C enriched serum for radiant, even-toned skin. Reduces dark spots and enhances natural glow.",
+                price: "$42.99",
+                imageColor: "#FFE4E1",
+                fullDescription: "Our best-selling Brightening Serum is formulated with 15% Vitamin C, hyaluronic acid, and natural botanical extracts. This lightweight formula absorbs quickly to target hyperpigmentation and uneven skin tone.",
+                ingredients: "Vitamin C (Ascorbic Acid), Hyaluronic Acid, Niacinamide, Licorice Root Extract, Aloe Vera, Jojoba Oil",
+                benefits: "Reduces appearance of dark spots, Evens skin tone, Boosts radiance, Hydrates and plumps skin",
+                usage: "Apply 2-3 drops to cleansed face and neck every morning before moisturizer. Follow with SPF."
+            },
+            {
+                id: 2,
+                name: "Hydrating Moisturizer",
+                description: "24-hour hydration with hyaluronic acid. Perfect for all skin types, non-comedogenic.",
+                price: "$34.99",
+                imageColor: "#E6E6FA",
+                fullDescription: "This daily moisturizer provides long-lasting hydration without feeling heavy or greasy. Formulated with hyaluronic acid and ceramides to strengthen the skin barrier.",
+                ingredients: "Hyaluronic Acid, Ceramides, Shea Butter, Squalane, Green Tea Extract, Vitamin E",
+                benefits: "Provides 24-hour hydration, Strengthens skin barrier, Soothes and calms skin, Lightweight texture",
+                usage: "Apply to face and neck every morning and evening after cleansing and toning."
+            },
+            {
+                id: 3,
+                name: "Gentle Cleanser",
+                description: "pH-balanced cleanser that removes impurities without stripping natural oils.",
+                price: "$28.99",
+                imageColor: "#F0F8FF",
+                fullDescription: "A gentle, foaming cleanser that effectively removes makeup, dirt, and impurities while maintaining the skin's natural moisture balance. Suitable for even the most sensitive skin.",
+                ingredients: "Aloe Vera, Chamomile Extract, Glycerin, Coconut Derivatives, Allantoin",
+                benefits: "Removes makeup and impurities, Maintains skin's pH balance, Soothes sensitive skin, Non-drying formula",
+                usage: "Massage onto damp skin, then rinse thoroughly with water. Use morning and evening."
+            },
+            {
+                id: 4,
+                name: "Night Repair Cream",
+                description: "Overnight treatment with retinol and peptides to rejuvenate skin while you sleep.",
+                price: "$49.99",
+                imageColor: "#FFF0F5",
+                fullDescription: "This intensive overnight treatment combines encapsulated retinol with peptides and nourishing botanicals to repair skin damage and reduce signs of aging while you sleep.",
+                ingredients: "Encapsulated Retinol, Peptides, Bakuchiol, Niacinamide, Rosehip Oil, Ceramides",
+                benefits: "Reduces fine lines and wrinkles, Improves skin texture and elasticity, Brightens complexion, Repairs overnight",
+                usage: "Apply a small amount to face and neck every evening as the last step of your skincare routine."
+            }
+        ];
+
+        const tips = [
+            {
+                icon: "fas fa-sun",
+                title: "Sun Protection",
+                description: "Always apply SPF 30+ sunscreen, even on cloudy days. UV rays can cause premature aging and hyperpigmentation."
+            },
+            {
+                icon: "fas fa-tint",
+                title: "Stay Hydrated",
+                description: "Drink at least 8 glasses of water daily and use hydrating skincare products to maintain skin's moisture barrier."
+            },
+            {
+                icon: "fas fa-bed",
+                title: "Beauty Sleep",
+                description: "Get 7-8 hours of sleep nightly. Your skin repairs itself overnight, reducing inflammation and improving texture."
+            },
+            {
+                icon: "fas fa-apple-alt",
+                title: "Healthy Diet",
+                description: "Eat foods rich in antioxidants like berries, nuts, and leafy greens to support skin health from within."
+            },
+            {
+                icon: "fas fa-hand-sparkles",
+                title: "Clean Hands",
+                description: "Always wash your hands before applying skincare products to prevent transferring bacteria to your face."
+            },
+            {
+                icon: "fas fa-leaf",
+                title: "Patch Test",
+                description: "Test new products on a small area of skin before full application to check for any adverse reactions."
+            }
+        ];
+
+        // DOM Elements
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        const cartIcon = document.getElementById('cart-icon');
+        const cartCount = document.querySelector('.cart-count');
+        const productsGrid = document.getElementById('products-grid');
+        const tipsGrid = document.getElementById('tips-grid');
+        const contactForm = document.getElementById('contactForm');
+        const newsletterForm = document.getElementById('newsletterForm');
+        const productModal = document.getElementById('productModal');
+        const closeModal = document.getElementById('closeModal');
+        const modalBody = document.getElementById('modalBody');
+        const carouselSlide = document.getElementById('carousel-slide');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+
+        // Initialize cart count
+        let cartItems = 0;
+
+        // Mobile Navigation Toggle
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+
+        // Initialize Products
+        function initializeProducts() {
+            productsGrid.innerHTML = '';
+            products.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.innerHTML = `
+                    <div class="product-img" style="background-color: ${product.imageColor}; display: flex; align-items: center; justify-content: center; color: #999;">
+                        <i class="fas fa-spa" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">${product.name}</h3>
+                        <p class="product-description">${product.description}</p>
+                        <p class="product-price">${product.price}</p>
+                        <button class="btn btn-primary view-product" data-id="${product.id}">View Product</button>
+                    </div>
+                `;
+                productsGrid.appendChild(productCard);
+            });
+
+            // Add event listeners to product buttons
+            document.querySelectorAll('.view-product').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const productId = parseInt(e.target.getAttribute('data-id'));
+                    openProductModal(productId);
+                });
+            });
+        }
+
+        // Initialize Tips
+        function initializeTips() {
+            tipsGrid.innerHTML = '';
+            tips.forEach(tip => {
+                const tipCard = document.createElement('div');
+                tipCard.className = 'tip-card';
+                tipCard.innerHTML = `
+                    <div class="tip-icon">
+                        <i class="${tip.icon}"></i>
+                    </div>
+                    <h3>${tip.title}</h3>
+                    <p>${tip.description}</p>
+                `;
+                tipsGrid.appendChild(tipCard);
+            });
+        }
+
+        // Open Product Modal
+        function openProductModal(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            modalBody.innerHTML = `
+                <div class="modal-product-image">
+                    <div style="height: 300px; background-color: ${product.imageColor}; display: flex; align-items: center; justify-content: center; color: #999; border-radius: 8px;">
+                        <i class="fas fa-spa" style="font-size: 4rem;"></i>
+                    </div>
+                </div>
+                <div class="modal-product-details">
+                    <h2>${product.name}</h2>
+                    <p class="product-price">${product.price}</p>
+                    <p>${product.fullDescription}</p>
+                    
+                    <div class="product-highlight">
+                        <i class="fas fa-check-circle highlight-icon"></i>
+                        <p><strong>Ingredients:</strong> ${product.ingredients}</p>
+                    </div>
+                    
+                    <div class="product-highlight">
+                        <i class="fas fa-star highlight-icon"></i>
+                        <p><strong>Benefits:</strong> ${product.benefits}</p>
+                    </div>
+                    
+                    <div class="product-highlight">
+                        <i class="fas fa-info-circle highlight-icon"></i>
+                        <p><strong>How to Use:</strong> ${product.usage}</p>
+                    </div>
+                    
+                    <button class="btn btn-accent add-to-cart" data-id="${product.id}" style="margin-top: 1.5rem;">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </div>
+            `;
+
+            productModal.style.display = 'flex';
+            
+            // Add event listener to the add to cart button in modal
+            const addToCartBtn = modalBody.querySelector('.add-to-cart');
+            addToCartBtn.addEventListener('click', () => {
+                cartItems++;
+                cartCount.textContent = cartItems;
+                alert(`${product.name} has been added to your cart!`);
+            });
+        }
+
+        // Close Product Modal
+        closeModal.addEventListener('click', () => {
+            productModal.style.display = 'none';
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === productModal) {
+                productModal.style.display = 'none';
+            }
+        });
+
+        // Cart functionality
+        cartIcon.addEventListener('click', () => {
+            alert(`You have ${cartItems} item${cartItems !== 1 ? 's' : ''} in your cart.`);
+        });
+
+        // Carousel functionality
+        let currentSlide = 0;
+        const totalSlides = document.querySelectorAll('.promo-slide').length;
+
+        function updateCarousel() {
+            carouselSlide.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide > 0) ? currentSlide - 1 : totalSlides - 1;
+            updateCarousel();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide < totalSlides - 1) ? currentSlide + 1 : 0;
+            updateCarousel();
+        });
+
+        // Auto slide carousel every 5 seconds
+        setInterval(() => {
+            currentSlide = (currentSlide < totalSlides - 1) ? currentSlide + 1 : 0;
+            updateCarousel();
+        }, 5000);
+
+        // Contact form submission
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // In a real application, you would send this data to a server
+            console.log('Contact form submitted:', { name, email, message });
+            
+            // Show success message
+            alert(`Thank you, ${name}! Your message has been sent. We'll get back to you soon.`);
+            
+            // Reset form
+            contactForm.reset();
+        });
+
+        // Newsletter form submission
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const emailInput = newsletterForm.querySelector('.newsletter-input');
+            const email = emailInput.value;
+            
+            console.log('Newsletter subscription:', email);
+            
+            // Show success message
+            alert(`Thank you for subscribing with ${email}! You'll receive our updates soon.`);
+            
+            // Reset form
+            newsletterForm.reset();
+        });
+
+        // Scroll reveal animation
+        function revealOnScroll() {
+            const elements = document.querySelectorAll('.product-card, .tip-card');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        // Initialize on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            initializeProducts();
+            initializeTips();
+            revealOnScroll();
+            
+            // Add scroll event listener for reveal animations
+            window.addEventListener('scroll', revealOnScroll);
+        });
+    </script>
+</body>
+</html>
